@@ -1,15 +1,52 @@
 @inherits BlazorLayoutComponent
 
-<div class="sidebar">
-    <NavMenu />
-</div>
+    <style>
+        nav {
+            background-color: transparent;
+        }
 
-<div class="main">
-    <div class="top-row px-4">
-        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
+        nav .brand-logo {
+          position: absolute;
+          color: #fff;
+          display: inline-block;
+          font-size: 1.1em;
+          padding: 0;
+        }
+
+        nav .nav-wrapper {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+    </style>
+
+ 
+    <div>
+
+        <!-- Dropdown Structure -->
+
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="https://www.jquery-az.com/6-examples-materialize-modals-live-demos-code/">Modal</a></li>
+            <li><a href="https://www.jquery-az.com/9-styles-of-materialize-buttons-to-use-in-your-web-projects/">Buttons</a></li>
+            <li class="divider"></li>
+            <li><a href="https://www.jquery-az.com/7-examples-materialize-tables-along-custom-styles/">Table</a></li>
+        </ul>
+
+        <nav>
+            <div class="nav-wrapper">
+
+                <a href="#!" class="brand-logo black-text">
+                    <i class="material-icons">dashboard</i>
+                    <strong>DataManager</strong> | App library
+                </a>
+
+                <a class="center dropdown-button brand-logo black-text" data-activates="dropdown1" href="#!">Materialize<i class="material-icons right">arrow_drop_down</i></a>
+
+                <ul class="right hide-on-med-and-down">
+                    <li class="active"><a class="black-text" href="https://www.jquery-az.com/jquery-tips/"><i class="material-icons right">apps</i></a></li>
+                    <li><a class="black-text" href="https://www.jquery-az.com/jquery-tips/"><i class="material-icons right">account_circle</i></a></li>
+                    <li><a class="black-text" href="https://www.jquery-az.com/jquery-tips/"><i class="material-icons right">help_outline</i></a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
 
-    <div class="content px-4">
-        @Body
-    </div>
-</div>
