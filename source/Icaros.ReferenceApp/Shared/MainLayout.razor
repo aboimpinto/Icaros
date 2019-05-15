@@ -1,0 +1,34 @@
+﻿@inherits LayoutComponentBase
+
+<div class="site">
+    <div class="header">
+        <div class="mdc-elevation--z4 expandElement">
+            <!-- <span class="F2">DataManager</span><span class="F3"> | App library</span> -->
+
+            <MatSelect Label="Pick a Food Group">
+                <MatOption Value=""></MatOption>
+                <MatOption Value="grains">Bread, Cereal, Rice, and Pasta</MatOption>
+                <MatOption Value="vegetables">Vegetables</MatOption>
+                <MatOption Value="fruit">Fruit</MatOption>
+            </MatSelect>
+        </div>
+    </div>
+    
+    <div class="body">@Body</div>
+    
+    <div class="footer">Footer</div>
+</div>
+
+<!-- <div class="sidebar">
+    <NavMenu />
+</div>
+
+<div class="main">
+    <div class="top-row px-4">
+        <a href="https://docs.microsoft.com/en-us/aspnet/" target="_blank" class="ml-md-auto">About</a>
+    </div>
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div> -->

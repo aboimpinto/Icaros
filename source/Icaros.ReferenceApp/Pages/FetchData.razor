@@ -1,9 +1,10 @@
-﻿@page "/fetchdata"
-@inject HttpClient Http
+@page "/fetchdata"
+@using Icaros.ReferenceApp.Data
+@inject WeatherForecastService ForecastService
 
 <h1>Weather forecast</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>This component demonstrates fetching data from a service.</p>
 
 @if (forecasts == null)
 {
@@ -39,14 +40,6 @@ else
 
     protected override async Task OnInitAsync()
     {
-        forecasts = await Http.GetJsonAsync<WeatherForecast[]>("sample-data/weather.json");
-    }
-
-    class WeatherForecast
-    {
-        public DateTime Date { get; set; }
-        public int TemperatureC { get; set; }
-        public int TemperatureF { get; set; }
-        public string Summary { get; set; }
+        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
     }
 }
